@@ -67,3 +67,18 @@ Key Features:
 - Shopping List
 
   Provide an option for users to generate a shopping list based on selected recipes.
+
+---
+### Project Journal
+
+#### Day 1
+- create base backend
+  - create Token authe/autho
+  - create list of backend API
+  - test spoonacular API in backend
+  - ~create project and app django~
+- learn doc API from spoonacular
+- understand the project requirement
+
+issue and solution:
+- 

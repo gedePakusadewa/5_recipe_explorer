@@ -18,7 +18,7 @@ Key Features:
 
 - Recipe Details
 
-  Display detailed information about each recipe, including ingredients, instructions, and nutritional information. Allow users to rate and leave comments on recipes.
+  Display detailed information about each recipe, including ingredients, instructions, and nutritional information. ~Allow users to rate and leave comments on recipes~ (NOT IMPLEMENTED).
 
 - Save and Favorite
 
@@ -26,7 +26,7 @@ Key Features:
 
 - User Profile
 
-  Create user profiles where users can view and manage their saved recipes, personal information, and preferences. Display a history of recently viewed recipes.
+  Create user profiles where users can view and manage their saved recipes, personal information, and preferences. ~Display a history of recently viewed recipes~(NOT IMPLEMENTED).
 
 - ~Responsive Design~ (NOT-IMPLEMENTED)
 
@@ -71,14 +71,38 @@ Key Features:
 ---
 ### Project Journal
 
+#### Day XX
+- create base frontend
+  - create pages with auth/autho 
+  - create dummy modal detail recipe
+  - create dummy profile page
+  - create login page
+  - create dummy dashboard/home page, the search bar is here
+  - create save page, this will display all recipe that saved/favorited by user
+
+
+#### Day 2
+- ~make dummy response API~
+  - to make sure little unnesisary request when update code frontend
+- ~learn doc API from spoonacular~
+  - make sure how recipe data is from API
+  - make sure what thing can be search through API
+
+issue and solution:
+- why using import X2, X3?
+  - I use "from CC, import X2, X3" instead of "from CC import *" because I want to differentiate this variable from other imported variables
+
 #### Day 1
 - create base backend
-  - create Token authe/autho
+  - ~create Token authe/autho~
   - create list of backend API
-  - test spoonacular API in backend
+    - API get and set user profile
+    - API search recipe
+    - API save favorite and get favorite
+  - ~test spoonacular API in backend~
   - ~create project and app django~
 - learn doc API from spoonacular
-- understand the project requirement
+- ~understand the project requirement~
 
 issue and solution:
 - 

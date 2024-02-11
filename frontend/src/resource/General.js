@@ -14,7 +14,10 @@ const General = {
     INPUT_CITY_TITLE:"City",
     INPUT_TEMPERATURE_TITLE:"Available Unit",
     INPUT_DARK_MODE_TITLE:"Use Dark Mode",
-    INPUT_SAVE:"SAVE"
+    INPUT_SAVE:"SAVE",
+    BACKTOLOGIN:"Back To Log In",
+    TITLELOGIN:"Welcome To Recipe Explorer",
+    WRONGINPUTLOGIN:"Wrong username or password!"
   };
   
   export default General

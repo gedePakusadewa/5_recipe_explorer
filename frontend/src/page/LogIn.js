@@ -21,10 +21,13 @@ const LogIn = () =>{
   }
 
   return(
-    <>
+    <div className="form-container-bg">
       <div className="form-container">
         <div>
-          <h2 className="">Welcome To Check Weather</h2>
+          <h2>{GeneralConst.TITLELOGIN}</h2>
+          {context.isErrorInput && (
+            <p className="wrong-username-password">{GeneralConst.WRONGINPUTLOGIN}</p>
+          )}
           <label htmlFor="title">{GeneralConst.USERNAME}</label><br />
           <input 
             type="text"
@@ -33,7 +36,7 @@ const LogIn = () =>{
           /><br />
           <label htmlFor="title">{GeneralConst.PASSWORD}</label><br />
           <input 
-            type="text"
+            type="password"
             name="password"
             onChange={(e)=>{updateForm(e)}}
           /><br />
@@ -51,7 +54,7 @@ const LogIn = () =>{
           </button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
   

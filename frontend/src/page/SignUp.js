@@ -1,5 +1,6 @@
 import { AuthContext } from "../App.js";
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import GeneralConst from "../resource/General.js"
 import "../style.css";
 
@@ -22,9 +23,13 @@ const SignUp = () =>{
   }
 
   return(
-    <>
+    <div className="form-container-bg">
       <div className="form-container">
         <div>
+          <h2>Sign Up To Be Member</h2>
+          {context.isErrorInput && (
+            <p className="wrong-username-password">Wrong format username or password or email!</p>
+          )}
           <label htmlFor="title">{GeneralConst.USERNAME}</label><br />
           <input 
             type="text"
@@ -55,9 +60,16 @@ const SignUp = () =>{
           >
             {GeneralConst.SUBMIT}
           </button>
+          <Link to="/Favorite">
+          <button 
+              className="btn btn-login"
+            >
+              {GeneralConst.BACKTOLOGIN}
+            </button>
+          </Link>
         </div>
       </div>      
-    </>
+    </div>
   )
 }
   

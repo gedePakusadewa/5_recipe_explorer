@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from "axios";
 import UrlConst from "../resource/Url.js"
 
@@ -9,6 +9,7 @@ import { useCookies } from 'react-cookie';
 const AuthProvider = ({ children }) => {
     const [token, setToken] = React.useState(null);
     const [cookies, setCookie, removeCookie] = useCookies(['user']);
+    const [isErrorInput, setIsErrorInput] = useState(false)
 
     const navigate = useNavigate();
 
@@ -20,6 +21,10 @@ const AuthProvider = ({ children }) => {
         setToken(res.data.token);
         navigate('/');
         setCookie('token', res.data.token, { path: '/' });
+        setIsErrorInput(false)
+      }).
+      catch((res) =>{
+        setIsErrorInput(true)
       })
       
       // for fake API
@@ -37,6 +42,8 @@ const AuthProvider = ({ children }) => {
         setToken(res.data.token);
         navigate('/');
         setCookie('token', res.data.token, { path: '/' });
+      }).catch((res) =>{
+        setIsErrorInput(true)
       })
     };
   
@@ -61,6 +68,7 @@ const AuthProvider = ({ children }) => {
   
     const handleSignUp = () => {
       navigate('/signup');
+      setIsErrorInput(false)
     }
 
     const value = {
@@ -69,6 +77,7 @@ const AuthProvider = ({ children }) => {
       handleLogout,
       handleSignUp,
       handleSubmitSignUp,
+      isErrorInput
     };
 
     // fake API

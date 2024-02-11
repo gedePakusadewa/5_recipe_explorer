@@ -79,7 +79,8 @@ Key Features:
   - create login page
   - create dummy dashboard/home page, the search bar is here
   - create save page, this will display all recipe that saved/favorited by user
-- improve the appearance of the login page
+- ~improve the appearance of the login/signUp page~
+- ~add and fix issue when user incorrecty input username/password in login/sign up~
 
 issue and solution:
 - 

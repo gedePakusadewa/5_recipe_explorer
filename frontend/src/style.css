@@ -1,0 +1,143 @@
+.btn{
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100%;
+    background-color: #2e3347;
+}
+
+.btn-signup{
+    border-radius: 8px;
+    background-color: #ffc107;
+}
+
+.btn-login{
+    border-radius: 8px;
+    background-color: #008CBA;
+}
+
+input{
+    border-radius: 5px;
+    width: 100%;
+    padding: 3px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #f1f1f1;
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.form-container > div {
+  width: 300px;
+  background-color: #eeeeeb;
+  padding: 20px;
+  border-radius: 2px;
+}
+
+.container-navbar{
+    display: flex;
+    height: 50px;
+    justify-content: end;
+}
+
+.btn-navbar{
+    background-color: #0d6efd;
+}
+
+.btn-navbar-logout{
+    background-color: #ffc107;
+}
+
+.today-container{
+    width: 70vw;
+    /* border: 1px solid red; */
+    
+}
+
+.today-container > div {
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #2e3347;
+    padding-top: 20px;
+    
+}
+
+.forecast-container{
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    /* border: 1px solid white */
+}
+
+.main-container{
+    display: flex;
+    width: 100%;
+}
+
+.forecast-container > div {
+    margin-top: 40px;
+    padding: 20px;
+    width: 80%;
+    border-radius: 20px;
+    background-color: #2e3347;
+}
+
+.container-navbar{
+    margin: 40px;
+    padding: 20px;
+    width: 80%;
+    border-radius: 20px;
+    height:100%;
+    background-color: #2e3347;
+}
+
+.curr-weather-container{
+    display:flex;
+    justify-content: space-between;
+}
+
+.curr-weather-container > div {
+    width: 100%;
+    text-align: center;
+}
+
+.curr-weather-container > div:first-child {
+    text-align: left;
+    font-size: 40px;
+    padding-left: 30px;
+}
+
+.curr-weather-container > div:first-child > span:first-child{
+    padding-bottom: 10px;    
+}
+
+.wrap-content-air-conditions{
+    display: flex;
+}
+
+.wrap-content-today-forecast{
+    display: flex;
+}
+
+.img-main{
+    width: 150px;
+    height: auto;
+}
+
+.img-next-7-days{
+    width: 50px;
+    height: auto;
+}

@@ -1,4 +1,4 @@
-#### This is a "Recipe Explorer", project generated from ChatGPT
+#### This is a "Recipe Explorer", project idea was generated from ChatGPT
 
 ### Project Image Preview
 
@@ -71,15 +71,18 @@ Key Features:
 ---
 ### Project Journal
 
-#### Day XX
-- create base frontend
+#### Day 3
+- ~create base frontend~
   - create pages with auth/autho 
   - create dummy modal detail recipe
   - create dummy profile page
   - create login page
   - create dummy dashboard/home page, the search bar is here
   - create save page, this will display all recipe that saved/favorited by user
+- improve the appearance of the login page
 
+issue and solution:
+- 
 
 #### Day 2
 - ~make dummy response API~

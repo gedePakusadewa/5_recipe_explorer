@@ -69,12 +69,24 @@ input{
     color: red;
 }
 
-/* log In */
+/* end log In */
+
+/* nav bar */
 
 .container-navbar{
     display: flex;
-    height: 50px;
-    justify-content: end;
+    justify-content: flex-end;
+    border:1px solid green;
+    /* float:right; */
+}
+
+.container-navbar > div > a {
+    /* margin: 40px; */
+    /* padding: 20px; */
+    width: 80%;
+    border-radius: 20px;
+    height:100%;
+    background-color: #2e3347;
 }
 
 .btn-navbar{
@@ -85,14 +97,65 @@ input{
     background-color: #ffc107;
 }
 
-.container-navbar{
-    margin: 40px;
-    padding: 20px;
-    width: 80%;
-    border-radius: 20px;
-    height:100%;
-    background-color: #2e3347;
+nav {
+    display: flex;
+    flex-direction: row;
 }
+
+/* end nav bar */
+
+/* card food */
+.card-food{
+    border: 2px solid #d0d7df;
+    width: 250px;
+    border-radius: 8px;
+}
+
+.card-img{
+    width: 250px;
+    height: auto;
+}
+
+.btn-card-favorite{
+    background-color: #B5A33F;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.btn-card-detail{
+    background-color: #344332;
+    padding: 5px;
+    font-size: 14px;
+}
+/* end card food */
+
+/* home/dashboard */
+.container-home{
+    background-color: #e9ebe8;
+}
+.title-home {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.container-search-input{
+    text-align: center;
+}
+
+.search-input-home{
+    font-size: 15px;
+    width: 400px;
+}
+
+.container-header-home{
+    background-image: url("../public/food_2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border:1px solid red;
+    height:205px
+}
+/* end home/dashboard */
 
 
 

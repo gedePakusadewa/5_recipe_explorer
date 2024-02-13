@@ -17,7 +17,8 @@ const General = {
     INPUT_SAVE:"SAVE",
     BACKTOLOGIN:"Back To Log In",
     TITLELOGIN:"Welcome To Recipe Explorer",
-    WRONGINPUTLOGIN:"Wrong username or password!"
+    WRONGINPUTLOGIN:"Wrong username or password!",
+    EXPLORERECIPE_TITLE:"Explore Recipe"
   };
   
   export default General

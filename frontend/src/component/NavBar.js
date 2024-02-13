@@ -11,8 +11,8 @@ function Navbar() {
 
   return(
     <div className="container-navbar">
-      <div>
-        <nav>
+      <nav>
+        <div>
           <Link to="/">
             <button 
               className="btn"
@@ -20,30 +20,36 @@ function Navbar() {
               {GeneralConst.DASHBOARD}
             </button>
           </Link>
+        </div>
+        <div>
           <Link to="/Favorite">
-          <button 
+            <button 
               className="btn"
             >
               {GeneralConst.FAVORITE}
             </button>
           </Link>
+        </div>
+        <div>
           <Link to="/profile">
-          <button 
+            <button 
               className="btn"
             >
               {GeneralConst.PROFILE}
             </button>
           </Link>
-          {cookies['token'] !== undefined && (
+        </div>
+        {cookies['token'] !== undefined && (
+          <div>
             <button
               className="btn"
               onClick={()=>context.handleLogout(cookies['token'])}
             >
               {GeneralConst.LOGOUT}
             </button>
-          )}
-        </nav>
-      </div>
+          </div>
+        )}
+      </nav>
     </div>
   )
 };

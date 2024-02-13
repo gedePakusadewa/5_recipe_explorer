@@ -71,6 +71,18 @@ Key Features:
 ---
 ### Project Journal
 
+#### Day XX
+- create working dashboard
+  - add search bar
+  - display search result
+    - only display image with title and button LOVE (not working) "favorite"
+
+#### Day 4
+- ~update dashboard style and update navbar~
+
+issue and solution:
+- 
+
 #### Day 3
 - ~create base frontend~
   - create pages with auth/autho 
@@ -83,7 +95,7 @@ Key Features:
 - ~add and fix issue when user incorrecty input username/password in login/sign up~
 
 issue and solution:
-- 
+- None
 
 #### Day 2
 - ~make dummy response API~

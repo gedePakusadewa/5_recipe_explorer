@@ -88,6 +88,11 @@ Key Features:
     - this case using same API URL add url detail in home
   - check how to implement favorite case using API recipe
     - to avoid multiple request to same API, i add two additional colom so its just need request only when user need detail about recipe
+- check how to implement recipe detail
+  - backend : combine this API response:
+    - https://api.spoonacular.com/recipes/654959/ingredientWidget.json
+    - https://api.spoonacular.com/recipes/654959/analyzedInstructions
+  - frontend : 
 
 issue and solution:
 - can not get value from usestate although there is value from that const?

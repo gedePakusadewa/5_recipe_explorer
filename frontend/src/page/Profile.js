@@ -1,9 +1,86 @@
+import { useEffect, useState } from "react";
+import { useCookies } from 'react-cookie';
+import Navbar from "../component/NavBar.js";
+import GeneralConst from "../resource/General.js"
+import UrlConst from "../resource/Url.js"
+import axios from "axios";
+import "../style.css";
+
 const Profile = () => {
-    return(
-        <>
-            <h1>Profile</h1>
-        </>
-    )
+  const [cookies, setCookie] = useCookies(['user']);
+  
+  const [form, setForm] = useState({
+    username:"",
+    email:""
+  });
+
+  useEffect(() => {
+    getProfile()
+  }, [])
+
+  const getProfile = async () => {    
+    axios({
+      method: 'get',
+      url: UrlConst.GETPROFILE,
+      headers: {'Authorization': "Token " + cookies['token']},
+    }).then((res) => {
+      setForm({
+        username: res.data.user.username,
+        email: res.data.user.email
+      })
+    })
+  };
+
+  const onSubmit = () => {    
+    axios({
+      method: 'post',
+      url: UrlConst.GETPROFILE,
+      data: {
+        username:form.username,
+        email:form.email
+      },
+      headers: {'Authorization': "Token " + cookies['token']},
+    })
+  };
+
+  const updateForm = (e) =>{
+    setForm(previousState =>{
+      return { 
+        ...previousState,
+        [e.target.name]:e.target.value
+      }
+    });
+  }
+
+  return(
+    <>
+      <div>
+        <label htmlFor="title">{GeneralConst.USERNAME}</label><br />
+        <input 
+          type="input"
+          defaultValue={form.username}
+          name="username"
+          onChange={
+            (e) => {updateForm(e)}
+          }
+        /><br />
+        <label htmlFor="title">{GeneralConst.EMAIL}</label><br />
+        <input
+          type="email"
+          name="email"
+          defaultValue={form.email}
+          onChange={
+            (e) => {updateForm(e)}
+          }
+        /><br />
+        <button
+          onClick={onSubmit}
+        >
+          Update
+        </button>
+      </div>
+    </>
+  )
 }
 
 export default Profile

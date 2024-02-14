@@ -1,6 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializers import UserSerializer
+from .serializers import UserSerializer, FavoriteSerializer
 from rest_framework import status, generics
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
@@ -16,6 +16,8 @@ import requests
 from django.http import JsonResponse
 
 from .helper.dummy_response import res_1, res_2
+
+from recipe_explorer.models import FavoriteModel
 
 class LogIn(generics.GenericAPIView):
     serializer_class = UserSerializer
@@ -76,18 +78,100 @@ class RecipeExplorer(generics.GenericAPIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        weather_url = getattr(settings, "WEATHER_API", None)
-        weather_api_key = getattr(settings, "WEATHER_API_KEY", None)
+        search_recipe_url = getattr(settings, "RECIPE_API", None)
+        recipe_api_key = getattr(settings, "RECIPE_API_KEY", None)
 
         try:
-            # url = "https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=2&apiKey=365ef2112ee841b1923c345c2e30835d"
-            # response = requests.get(url)
+            search_recipe_url_query = search_recipe_url.replace("XXXX", request.GET.get("keyword"))
+            search_recipe_url_api_key = search_recipe_url_query.replace("YYYY", recipe_api_key)
+            
+
+            return JsonResponse(res_1)
+        
+            # response = requests.get(search_recipe_url_api_key)
             # data = response.json()
-
-
-            return JsonResponse(res_2)
-        except:
+            # return JsonResponse(res_1)
+        
+        except :
             return Response(
-                {"Error":"Something wrong"},
+                { "Error":"Something wrong" },
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+        
+class Profile(generics.GenericAPIView):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user_id = Token.objects.get(key=request.auth.key).user_id
+        user = User.objects.get(pk=user_id)
+
+        if not user:
+            return Response(
+                {
+                    "message":"User not found"
+                },
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        serializer_user = self.serializer_class(instance=user)
+
+        return Response({"user":serializer_user.data})
+
+    def post(self, request):
+        user_id = Token.objects.get(key=request.auth.key).user_id
+        user = User.objects.get(pk=user_id)
+
+        if user is not None:
+            serializer_user = self.serializer_class(user, data=request.data, partial=True)
+
+            if  serializer_user.is_valid():
+                serializer_user.save()
+
+                return Response(status=status.HTTP_200_OK)
+            
+        return Response(serializer_user.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class Favorite(generics.GenericAPIView):
+    serializer_class = FavoriteSerializer
+    queryset = FavoriteModel.objects.all()
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get_all_favorite(self, user_id):
+        try:
+            return FavoriteModel.objects.filter(user_id=user_id)
+        except:
+            return None
+
+    def post(self, request):
+        user_id = Token.objects.get(key=request.auth.key).user_id
+        user = User.objects.get(pk=user_id)
+
+        if user is not None:
+            serializer = self.serializer_class(data={"user":user_id, "recipe_id":request.data['recipe_id']})
+
+            if  serializer.is_valid():
+                serializer.save()
+
+                return Response(status=status.HTTP_200_OK)
+            
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def get(self, request):
+        user_id = Token.objects.get(key=request.auth.key).user_id
+        favorite_response = self.get_all_favorite(user_id)
+        
+        if favorite_response is not None:
+            serializer = self.serializer_class(favorite_response, many=True)
+
+            return Response(serializer.data)
+    
+        return Response(
+                {
+                    "message":"User not found"
+                },
+                status=status.HTTP_404_NOT_FOUND
             )

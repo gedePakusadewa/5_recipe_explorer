@@ -1,12 +1,12 @@
-const Card = () => {
+const Card = ({title, imageUrl, id}) => {
   return(
     <>
       <div className="card-food">
         <img
-          src="https://spoonacular.com/recipeImages/654959-312x231.jpg"
+          src={imageUrl}
           className="card-img"
         />
-        <span>Tralla asdasd asdas</span>
+        <span>{title}</span>
         <br />
         <button
           className="btn btn-card-favorite"

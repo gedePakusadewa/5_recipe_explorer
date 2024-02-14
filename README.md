@@ -71,11 +71,29 @@ Key Features:
 ---
 ### Project Journal
 
-#### Day XX
-- create working dashboard
+#### Day 5
+- ~create working dashboard~
   - add search bar
   - display search result
     - only display image with title and button LOVE (not working) "favorite"
+- ~make a working profile~
+  - make API for profile
+  - make frontend to handle profile
+- ~make backend favorite~
+  - make table for this case
+  - make API for get and set favorite
+- make frontend to handle favorite
+  - display favorite recipe user using card style
+  - check what api from recipe to this favorite case
+  - check how to implement favocitre case using API recipe
+
+issue and solution:
+- can not get value from usestate although there is value from that const?
+  - simply i forget to implement that usestate
+- can not serialize favorite without using data user_id in request
+  - simply use "user":user_id instead of User:user
+- error when get data from favorite
+  - simple i use same name for class name and model name, when i change model name, its solved
 
 #### Day 4
 - ~update dashboard style and update navbar~

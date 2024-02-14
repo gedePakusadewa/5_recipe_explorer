@@ -82,10 +82,12 @@ Key Features:
 - ~make backend favorite~
   - make table for this case
   - make API for get and set favorite
-- make frontend to handle favorite
+- ~make frontend to handle favorite~
   - display favorite recipe user using card style
   - check what api from recipe to this favorite case
-  - check how to implement favocitre case using API recipe
+    - this case using same API URL add url detail in home
+  - check how to implement favorite case using API recipe
+    - to avoid multiple request to same API, i add two additional colom so its just need request only when user need detail about recipe
 
 issue and solution:
 - can not get value from usestate although there is value from that const?
@@ -94,6 +96,10 @@ issue and solution:
   - simply use "user":user_id instead of User:user
 - error when get data from favorite
   - simple i use same name for class name and model name, when i change model name, its solved
+- should i use multiple request recipe id data for each favorite or just save small data in system DB then display it to user?
+  - to avoid multiple request to API RECIPE, i add title and image URL colom to model Favorite. So, when user open page favorite, system only request detail recipe to API RECIPE
+- url field from image url for django model?
+  - use URLField() in model
 
 #### Day 4
 - ~update dashboard style and update navbar~

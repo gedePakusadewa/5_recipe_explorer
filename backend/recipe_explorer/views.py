@@ -84,7 +84,6 @@ class RecipeExplorer(generics.GenericAPIView):
         try:
             search_recipe_url_query = search_recipe_url.replace("XXXX", request.GET.get("keyword"))
             search_recipe_url_api_key = search_recipe_url_query.replace("YYYY", recipe_api_key)
-            
 
             return JsonResponse(res_1)
         
@@ -151,7 +150,7 @@ class Favorite(generics.GenericAPIView):
         user = User.objects.get(pk=user_id)
 
         if user is not None:
-            serializer = self.serializer_class(data={"user":user_id, "recipe_id":request.data['recipe_id']})
+            serializer = self.serializer_class(data={"user":user_id, "recipe_id":request.data['recipe_id'], "title":request.data['title'], "imageURL":request.data['imageURL']})
 
             if  serializer.is_valid():
                 serializer.save()
@@ -175,3 +174,4 @@ class Favorite(generics.GenericAPIView):
                 },
                 status=status.HTTP_404_NOT_FOUND
             )
+

@@ -1,4 +1,4 @@
-const Card = ({title, imageUrl, id}) => {
+const Card = ({title, imageUrl, id, isShowBtnFavorite}) => {
   return(
     <>
       <div className="card-food">
@@ -8,12 +8,16 @@ const Card = ({title, imageUrl, id}) => {
         />
         <span>{title}</span>
         <br />
-        <button
-          className="btn btn-card-favorite"
-        >
-          Favorite
-        </button>
-        <br />
+        {isShowBtnFavorite === true && (
+          <>
+            <button
+              className="btn btn-card-favorite"
+            >
+              Favorite
+            </button>
+            <br />
+          </>
+        )}
         <button
           className="btn btn-card-detail"
         >

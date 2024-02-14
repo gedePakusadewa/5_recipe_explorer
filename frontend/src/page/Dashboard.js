@@ -52,14 +52,13 @@ const Dashboard = () => {
           {searchResult.map((item, idx) => {
             return (
               <Card 
-              title={item.title}
-              imageUrl={item.image}
-              id={item.id}
-            />
+                title={item.title}
+                imageUrl={item.image}
+                id={item.id}
+                isShowBtnFavorite={true}
+              />
             )
-
-          })}
-          
+          })}          
         </>
       )}
     </div>

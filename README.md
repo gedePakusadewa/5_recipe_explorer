@@ -71,6 +71,18 @@ Key Features:
 ---
 ### Project Journal
 
+#### Day 6
+- implement recipe detail in BACKEND
+  - create new API
+  - using this https://api.spoonacular.com/recipes/1003464/information?apiKey= because this endpoint API contain ingredient and instruction in one response
+- check best way to implement detail recipe in frontend
+
+issue and solution
+- how to make API that suited with simple ingredient response?
+  - save API RECIPE as list then add it to DICT
+- using recipe detail API, should backend process it to return simple JSON or just send it directly to frontend?
+  - let backend process it first because in front that response will easily process than directly send API detail recipe to frontend and also only send data that needed by frontend
+
 #### Day 5
 - ~create working dashboard~
   - add search bar

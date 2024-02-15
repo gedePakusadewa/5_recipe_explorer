@@ -130,8 +130,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-RECIPE_API='https://api.spoonacular.com/recipes/complexSearch?query=XXXX&apiKey=YYYY'
-RECIPE_API_KEY='365ef2112ee841b1923c345c2e30835d'
+RECIPE_API = 'https://api.spoonacular.com/recipes/complexSearch?query={query}&apiKey={apiKey}'
+RECIPE_DETAIL_RECIPE_API = 'https://api.spoonacular.com/recipes/{recipe_id}/information?apiKey={apiKey}'
+RECIPE_API_KEY = '365ef2112ee841b1923c345c2e30835d'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",

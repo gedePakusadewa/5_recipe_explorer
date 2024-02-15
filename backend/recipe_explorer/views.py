@@ -15,7 +15,7 @@ from django.conf import settings
 import requests
 from django.http import JsonResponse
 
-from .helper.dummy_response import res_1, res_2
+from .helper.dummy_response import res_1, res_2, res_3, res_4
 
 from recipe_explorer.models import FavoriteModel
 
@@ -78,16 +78,12 @@ class RecipeExplorer(generics.GenericAPIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        search_recipe_url = getattr(settings, "RECIPE_API", None)
-        recipe_api_key = getattr(settings, "RECIPE_API_KEY", None)
-
         try:
-            search_recipe_url_query = search_recipe_url.replace("XXXX", request.GET.get("keyword"))
-            search_recipe_url_api_key = search_recipe_url_query.replace("YYYY", recipe_api_key)
+            search_recipe_url = (getattr(settings, "RECIPE_API", None).replace("{query}", request.GET.get("keyword"))).replace("{apiKey}", getattr(settings, "RECIPE_API_KEY", None))
 
             return JsonResponse(res_1)
         
-            # response = requests.get(search_recipe_url_api_key)
+            # response = requests.get(search_recipe_url)
             # data = response.json()
             # return JsonResponse(res_1)
         
@@ -175,3 +171,25 @@ class Favorite(generics.GenericAPIView):
                 status=status.HTTP_404_NOT_FOUND
             )
 
+class RecipeDetail(generics.GenericAPIView):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        detail_recipe_url = (getattr(settings, "RECIPE_DETAIL_RECIPE_API", None).replace("{recipe_id}", request.GET.get("recipe_id"))).replace("{apiKey}", getattr(settings, "RECIPE_API_KEY", None))
+        
+        response = requests.get(detail_recipe_url)
+        data = response.json()
+
+        set_ingredient = {"ingredients" : ""}
+        list_ingredient = []
+
+        for item in data['extendedIngredients']:
+            list_ingredient.append(item["original"])
+
+        set_ingredient["ingredients"] = list_ingredient
+        set_ingredient["instructions"] = data['instructions']
+
+        return JsonResponse(set_ingredient)

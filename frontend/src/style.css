@@ -1,4 +1,4 @@
-.btn{
+.btn-cust{
     border: none;
     color: white;
     padding: 10px;
@@ -157,5 +157,30 @@ nav {
 }
 /* end home/dashboard */
 
+/* profile */
 
+.container-profile{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
 
+.wrapper-profile{
+    width: 300px;
+    height: auto;
+    border: 3px solid #954a36;
+    border-radius: 9px;
+    padding: 10px
+}
+
+.wrapper-profile > input{
+    margin-bottom: 15px;
+}
+
+.title-profile{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* end profile */

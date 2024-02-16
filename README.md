@@ -75,7 +75,10 @@ Key Features:
 - ~check best way to implement detail recipe in frontend~
   - use modal
   - modal appear in home and favorite page
-- add soma style to profile
+- ~add soma style to profile~
+  - update position
+  - add new title for profile
+  - set color #e9ebe8
 
 issue and solution
 - should make modal or new page when user click detail?

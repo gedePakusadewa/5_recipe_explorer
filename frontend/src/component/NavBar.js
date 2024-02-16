@@ -15,7 +15,7 @@ function Navbar() {
         <div>
           <Link to="/">
             <button 
-              className="btn"
+              className="btn-cust"
             >
               {GeneralConst.DASHBOARD}
             </button>
@@ -24,7 +24,7 @@ function Navbar() {
         <div>
           <Link to="/Favorite">
             <button 
-              className="btn"
+              className="btn-cust"
             >
               {GeneralConst.FAVORITE}
             </button>
@@ -33,7 +33,7 @@ function Navbar() {
         <div>
           <Link to="/profile">
             <button 
-              className="btn"
+              className="btn-cust"
             >
               {GeneralConst.PROFILE}
             </button>
@@ -42,7 +42,7 @@ function Navbar() {
         {cookies['token'] !== undefined && (
           <div>
             <button
-              className="btn"
+              className="btn-cust"
               onClick={()=>context.handleLogout(cookies['token'])}
             >
               {GeneralConst.LOGOUT}

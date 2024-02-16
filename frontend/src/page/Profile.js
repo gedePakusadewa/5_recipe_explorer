@@ -53,8 +53,9 @@ const Profile = () => {
   }
 
   return(
-    <>
-      <div>
+    <div className="container-profile">
+      <div className="wrapper-profile">
+        <div className="title-profile">{GeneralConst.PROFILE}</div>
         <label htmlFor="title">{GeneralConst.USERNAME}</label><br />
         <input 
           type="input"
@@ -63,7 +64,7 @@ const Profile = () => {
           onChange={
             (e) => {updateForm(e)}
           }
-        /><br />
+        />
         <label htmlFor="title">{GeneralConst.EMAIL}</label><br />
         <input
           type="email"
@@ -72,14 +73,15 @@ const Profile = () => {
           onChange={
             (e) => {updateForm(e)}
           }
-        /><br />
+        />
         <button
+          className="btn-cust"
           onClick={onSubmit}
         >
           Update
         </button>
       </div>
-    </>
+    </div>
   )
 }
 

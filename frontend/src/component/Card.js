@@ -22,7 +22,7 @@ const Card = ({
         {isShowBtnFavorite === true && (
           <>
             <button
-              className="btn btn-card-favorite"
+              className="btn-cust btn-card-favorite"
             >
               {GeneralConst.FAVORITE}
             </button>
@@ -30,7 +30,7 @@ const Card = ({
           </>
         )}
         <button
-          className="btn btn-card-detail"
+          className="btn-cust btn-card-detail"
           onClick={(e) => {
             setIsShowModal(true)
             setRecipeIdModal(id)

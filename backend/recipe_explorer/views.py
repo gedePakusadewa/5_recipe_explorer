@@ -185,11 +185,11 @@ class RecipeDetail(generics.GenericAPIView):
 
         set_ingredient = {"ingredients" : ""}
         list_ingredient = []
-
+        
         for item in data['extendedIngredients']:
             list_ingredient.append(item["original"])
 
         set_ingredient["ingredients"] = list_ingredient
         set_ingredient["instructions"] = data['instructions']
 
-        return JsonResponse(set_ingredient)
+        return Response(set_ingredient)

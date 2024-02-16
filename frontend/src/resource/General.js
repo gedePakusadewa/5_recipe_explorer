@@ -18,7 +18,11 @@ const General = {
     BACKTOLOGIN:"Back To Log In",
     TITLELOGIN:"Welcome To Recipe Explorer",
     WRONGINPUTLOGIN:"Wrong username or password!",
-    EXPLORERECIPE_TITLE:"Explore Recipe"
+    EXPLORERECIPE_TITLE:"Explore Recipe",
+    SEARCH:"Search",
+    DETAIL:"Detail",
+    CLOSE:"Close"
+
   };
   
   export default General

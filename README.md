@@ -71,8 +71,18 @@ Key Features:
 ---
 ### Project Journal
 
+#### Day 7
+- ~check best way to implement detail recipe in frontend~
+  - use modal
+  - modal appear in home and favorite page
+- add soma style to profile
+
+issue and solution
+- should make modal or new page when user click detail?
+  - use modal because it only display data about ingredient and instruction. if maybe in the future I add some information in detail then it preferable to just make a new page
+
 #### Day 6
-- implement recipe detail in BACKEND
+- ~implement recipe detail in BACKEND~
   - create new API
   - using this https://api.spoonacular.com/recipes/1003464/information?apiKey= because this endpoint API contain ingredient and instruction in one response
 - check best way to implement detail recipe in frontend
@@ -82,6 +92,8 @@ issue and solution
   - save API RECIPE as list then add it to DICT
 - using recipe detail API, should backend process it to return simple JSON or just send it directly to frontend?
   - let backend process it first because in front that response will easily process than directly send API detail recipe to frontend and also only send data that needed by frontend
+- should make modal or new page when user click detail?
+  -  
 
 #### Day 5
 - ~create working dashboard~

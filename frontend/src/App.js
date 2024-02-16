@@ -9,6 +9,7 @@ import AuthProvider from './helper/Authentication.js';
 import ProtectedRoute from './helper/ProtectedRoute.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 export const AuthContext = React.createContext(null);
 

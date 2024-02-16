@@ -1169,3 +1169,21 @@ res_5 = {
     "originalId": None,
     "spoonacularScore": 27.726211547851562
 }
+
+# custom json responsex
+res_6 = {
+    "ingredients": [
+        "2 tablespoons Flour",
+        "cup Green Onions, chopped",
+        "1 1/4 cups Non-Fat Milk",
+        "2 tablespoons Olive Oil",
+        "2 tablespoons Onion, minced",
+        "1/4 cup Parmesan Cheese, grated",
+        "cup Fresh Parsley or Basil, chopped",
+        "8 ounces Tubular Pasta",
+        "1 cup Frozen Peas, thawed",
+        "1 dsh Hot Pepper Sauce",
+        "6 1/2 ounces Can Water-Packed Tuna, drained"
+    ],
+    "instructions": "<ol><li>Cook pasta in a large pot of boiling water until al dente. Drain and return to warm pot. Put olive oil in saucepan and add onion. Saute until transparent. Stir in flour and cook for a few seconds and then whisk in milk. Stir constantly until this thickens. Add peas, tuna (shredded into chunks,) parsley, green onions, cheese and hot pepper sauce. Pour over pasta and stir gently to mix. Serve at once.</li></ol>"
+}

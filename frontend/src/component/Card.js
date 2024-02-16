@@ -1,4 +1,15 @@
-const Card = ({title, imageUrl, id, isShowBtnFavorite}) => {
+import GeneralConst from "../resource/General.js"
+
+const Card = ({
+    title, 
+    imageUrl, 
+    isShowBtnFavorite, 
+    id,
+    setIsShowModal = () =>{},
+    setRecipeIdModal = () => {},
+    setTitleModal = () => {}
+  }) => {
+
   return(
     <>
       <div className="card-food">
@@ -13,19 +24,23 @@ const Card = ({title, imageUrl, id, isShowBtnFavorite}) => {
             <button
               className="btn btn-card-favorite"
             >
-              Favorite
+              {GeneralConst.FAVORITE}
             </button>
             <br />
           </>
         )}
         <button
           className="btn btn-card-detail"
+          onClick={(e) => {
+            setIsShowModal(true)
+            setRecipeIdModal(id)
+            setTitleModal(title)
+          }}
         >
-          Detail
+          {GeneralConst.DETAIL}
         </button>
       </div>
     </>
-
   )
 }
 

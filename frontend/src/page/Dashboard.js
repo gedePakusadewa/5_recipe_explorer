@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useCookies } from 'react-cookie';
 import Card from "../component/Card.js";
+import ModalDetailRecipe from "../component/ModalDetailRecipe.js";
 import GeneralConst from "../resource/General.js"
 import UrlConst from "../resource/Url.js"
 import axios from "axios";
@@ -11,6 +12,9 @@ const Dashboard = () => {
   const [searchInput, setSearchInput] = useState("")
   const [searchResult, setSearchResult] = useState(null)
   const [totalSearchResult, setTotalSearchResult] = useState(0)
+  const [isShowModal, setIsShowModal] = useState(false)
+  const [recipeIdModal, setRecipeIdModal] = useState(0)
+  const [titleModal, setTitleModal] = useState('')
 
   const searchHandler = async () => {
     if(searchInput !== null || searchInput.length > 0){
@@ -54,12 +58,22 @@ const Dashboard = () => {
               <Card 
                 title={item.title}
                 imageUrl={item.image}
-                id={item.id}
                 isShowBtnFavorite={true}
+                id={item.id}
+                setIsShowModal={setIsShowModal}
+                setRecipeIdModal={setRecipeIdModal}
+                setTitleModal={setTitleModal}
               />
             )
           })}          
         </>
+      )}
+      {isShowModal && (
+        <ModalDetailRecipe
+          recipeIdModal={recipeIdModal}
+          titleModal={titleModal}
+          setIsShowModal={setIsShowModal}
+        />
       )}
     </div>
   )

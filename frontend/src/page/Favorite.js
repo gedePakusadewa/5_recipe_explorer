@@ -2,13 +2,17 @@ import { useState, useEffect } from "react";
 import { useCookies } from 'react-cookie';
 import Card from "../component/Card.js";
 import UrlConst from "../resource/Url.js"
+import ModalDetailRecipe from "../component/ModalDetailRecipe.js";
 import axios from "axios";
 
 const Favorite = () => {
   const [cookies, setCookie] = useCookies(['user']);
 
   const [favoriteData, setFavoriteData] = useState(null)
-
+  const [isShowModal, setIsShowModal] = useState(false)
+  const [recipeIdModal, setRecipeIdModal] = useState(0)
+  const [titleModal, setTitleModal] = useState('')
+  
   useEffect(() =>{
     getFavorite()
   }, [])
@@ -30,12 +34,22 @@ const Favorite = () => {
         return (
           <Card 
             title={item.title}
-            imageUrl={item.imageURL}
-            id={item.id}
+            imageUrl={item.image}
             isShowBtnFavorite={false}
+            id={item.id}
+            setIsShowModal={setIsShowModal}
+            setRecipeIdModal={setRecipeIdModal}
+            setTitleModal={setTitleModal}
           />
         )
       }))}
+      {isShowModal && (
+        <ModalDetailRecipe
+          recipeIdModal={recipeIdModal}
+          titleModal={titleModal}
+          setIsShowModal={setIsShowModal}
+        />
+      )}
     </>
   )
 }

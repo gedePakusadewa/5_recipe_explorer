@@ -184,3 +184,11 @@ nav {
 }
 
 /* end profile */
+
+/* favorite */
+.wrapper-favorite{
+    margin: 0 10px 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* end favorite */

@@ -21,8 +21,8 @@ const General = {
     EXPLORERECIPE_TITLE:"Explore Recipe",
     SEARCH:"Search",
     DETAIL:"Detail",
-    CLOSE:"Close"
-
+    CLOSE:"Close",
+    EMPTY_FAVORITE_MESSAGE:"There no favorite recipe yet."
   };
   
   export default General

@@ -71,6 +71,12 @@ Key Features:
 ---
 ### Project Journal
 
+#### Day 8
+- ~implement "click button favorite" in frontend~
+  - update style favorite
+  - when user click favorite, system automatically add recipre to favorite
+  - when system succesfully add recipe to DB, a simple modal appear
+   
 #### Day 7
 - ~check best way to implement detail recipe in frontend~
   - use modal
@@ -79,6 +85,10 @@ Key Features:
   - update position
   - add new title for profile
   - set color #e9ebe8
+- check what things need update to implement favorite
+  - when user click favorite then sistem write to DB if favorite already or not exist in DB. my planning to add remove favorite when clicked when the recipe already in favorite but this will be implemented later.
+  - add modal that contain message "the recipe" got favorited.
+  - update style of favorite page, when there are no any favorite then it show "there no favorite recipe yet"
 
 issue and solution
 - should make modal or new page when user click detail?

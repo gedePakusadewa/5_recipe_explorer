@@ -7,7 +7,8 @@ const Card = ({
     id,
     setIsShowModal = () =>{},
     setRecipeIdModal = () => {},
-    setTitleModal = () => {}
+    setTitleModal = () => {},
+    favoriteHandler = () => {}
   }) => {
 
   return(
@@ -23,6 +24,10 @@ const Card = ({
           <>
             <button
               className="btn-cust btn-card-favorite"
+              onClick={(e) => {
+                favoriteHandler(id, title, imageUrl)
+                setTitleModal(title)
+              }}
             >
               {GeneralConst.FAVORITE}
             </button>

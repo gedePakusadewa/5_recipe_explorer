@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useCookies } from 'react-cookie';
 import Card from "../component/Card.js";
 import UrlConst from "../resource/Url.js"
+import GeneralConst from "../resource/General.js"
 import ModalDetailRecipe from "../component/ModalDetailRecipe.js";
 import axios from "axios";
 
@@ -30,19 +31,24 @@ const Favorite = () => {
   return(
     <>
       <h1>Favorite</h1>
-      {favoriteData !== null && (favoriteData.map((item, idx) => {
-        return (
-          <Card 
-            title={item.title}
-            imageUrl={item.image}
-            isShowBtnFavorite={false}
-            id={item.id}
-            setIsShowModal={setIsShowModal}
-            setRecipeIdModal={setRecipeIdModal}
-            setTitleModal={setTitleModal}
-          />
-        )
-      }))}
+      <div className="wrapper-favorite">
+        {favoriteData === null || favoriteData.length === 0 && (
+          <p>{GeneralConst.EMPTY_FAVORITE_MESSAGE}</p>
+        )}
+        {favoriteData !== null && (favoriteData.map((item, idx) => {
+          return (
+            <Card 
+              title={item.title}
+              imageUrl={item.imageURL}
+              isShowBtnFavorite={false}
+              id={item.id}
+              setIsShowModal={setIsShowModal}
+              setRecipeIdModal={setRecipeIdModal}
+              setTitleModal={setTitleModal}
+            />
+          )
+        }))}
+      </div>      
       {isShowModal && (
         <ModalDetailRecipe
           recipeIdModal={recipeIdModal}

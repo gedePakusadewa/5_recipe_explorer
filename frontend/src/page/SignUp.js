@@ -23,8 +23,8 @@ const SignUp = () =>{
   }
 
   return(
-    <div className="form-container-bg">
-      <div className="form-container">
+    <div className="login-container-bg">
+      <div className="login-container">
         <div>
           <h2>Sign Up To Be Member</h2>
           {context.isErrorInput && (
@@ -49,7 +49,7 @@ const SignUp = () =>{
             onChange={(e)=>{updateForm(e)}}
           /><br />
           <button
-          className="btn btn-signup"
+          className="btn-cust btn-signup btn-login-signup-first-child"
             onClick={
               ()=>context.handleSubmitSignUp(
                 form.username, 
@@ -61,8 +61,8 @@ const SignUp = () =>{
             {GeneralConst.SUBMIT}
           </button>
           <Link to="/Favorite">
-          <button 
-              className="btn btn-login"
+            <button 
+              className="btn-cust btn-login"
             >
               {GeneralConst.BACKTOLOGIN}
             </button>

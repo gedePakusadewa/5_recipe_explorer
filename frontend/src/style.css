@@ -33,14 +33,14 @@ input{
 }
 
 /* log In */
-.form-container{
+.login-container{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: auto;
 }
 
-.form-container > div {
+.login-container > div {
   width: 300px;
   margin-top: 107px;
   margin-left: 100px;
@@ -49,16 +49,16 @@ input{
   border-radius: 5px;
 }
 
-.form-container > div > h2 {
+.login-container > div > h2 {
     text-align: center;
     color: white;
 }
 
-.form-container > div > label {
+.login-container > div > label {
     color: white;
 }
 
-.form-container-bg{
+.login-container-bg{
     background-image: url("../public/pizza_1.jpg");
     height: 700px;
     background-repeat: no-repeat;
@@ -67,6 +67,16 @@ input{
 
 .wrong-username-password {
     color: red;
+}
+
+.login-container > div > button {
+    margin-top:10px;
+}
+
+@media only screen and (max-width:600){
+    .login-container-bg{
+        display: none;
+    }
 }
 
 /* end log In */

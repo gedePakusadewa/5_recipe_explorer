@@ -21,8 +21,8 @@ const LogIn = () =>{
   }
 
   return(
-    <div className="form-container-bg">
-      <div className="form-container">
+    <div className="login-container-bg">
+      <div className="login-container">
         <div>
           <h2>{GeneralConst.TITLELOGIN}</h2>
           {context.isErrorInput && (
@@ -41,13 +41,13 @@ const LogIn = () =>{
             onChange={(e)=>{updateForm(e)}}
           /><br />
           <button
-            className="btn btn-login" 
+            className="btn-cust btn-login btn-login-signup-first-child" 
             onClick={()=>context.handleLogin(form.username, form.password)}
           >
             {GeneralConst.LOGIN}
           </button>
           <button
-            className="btn btn-signup" 
+            className="btn-cust btn-signup" 
             onClick={()=>context.handleSignUp()}
           >
             {GeneralConst.SIGNUP}

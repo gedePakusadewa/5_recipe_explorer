@@ -71,6 +71,20 @@ Key Features:
 ---
 ### Project Journal
 
+##### Day 9
+- login/sign page
+  - fix button style
+  - responsive
+- fix style in general related to btn class
+- ~fix double favorite~
+- ~add loading icon in pop up deatil recipe~
+- ~fix when search keyword outside pasta~
+- fix different modal content for detail pasta in favorite
+- add string do general resource
+
+issue and solution
+- 
+
 #### Day 8
 - ~implement "click button favorite" in frontend~
   - update style favorite

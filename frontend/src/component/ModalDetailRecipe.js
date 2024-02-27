@@ -16,6 +16,7 @@ const ModalDetailRecipe = ({
   const [show, setShow] = useState(true);
   const [ingredients, setIngredients] = useState("")
   const [instructions, setInstructions] = useState("")
+  const [isLoading, setIsLoading] = useState(true)
 
   const handleClose = () => {
     setShow(false)
@@ -32,6 +33,7 @@ const ModalDetailRecipe = ({
       }).then((res) => {
         setIngredients(res.data.ingredients)
         setInstructions(res.data.instructions)
+        setIsLoading(false)
       })
     }
   }, [])
@@ -43,6 +45,9 @@ const ModalDetailRecipe = ({
           <Modal.Title>Detail {titleModal}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          {isLoading && (
+            <span>Please wait, data is being fetching</span>
+          )}
           {ingredients && (
             ingredients.map((item) => {
               return (

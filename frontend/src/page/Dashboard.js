@@ -44,8 +44,8 @@ const Dashboard = () => {
         imageURL: imageURL
       }
     }).then((res) => {
-      console.log(res)
       setIsShowModalFavorite(true)
+    }).catch((err) => {
     })
   }
 

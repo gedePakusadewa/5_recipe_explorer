@@ -81,11 +81,11 @@ class RecipeExplorer(generics.GenericAPIView):
         try:
             search_recipe_url = (getattr(settings, "RECIPE_API", None).replace("{query}", request.GET.get("keyword"))).replace("{apiKey}", getattr(settings, "RECIPE_API_KEY", None))
 
-            return JsonResponse(res_1)
+            # return JsonResponse(res_1)
         
-            # response = requests.get(search_recipe_url)
-            # data = response.json()
-            # return JsonResponse(data)
+            response = requests.get(search_recipe_url)
+            data = response.json()
+            return JsonResponse(data)
         
         except :
             return Response(

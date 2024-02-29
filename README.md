@@ -1,6 +1,9 @@
 #### This is a "Recipe Explorer", project idea was generated from ChatGPT
 
-### Project Image Preview
+### Project Image Desktop Preview
+![alt text](https://github.com/gedePakusadewa/5_recipe_explorer/blob/main/1.jpg)
+
+### Project Image Mobile Preview
 
 ### Project Description:
 
@@ -68,6 +71,49 @@ Key Features:
 
   Provide an option for users to generate a shopping list based on selected recipes.
 
+- new feature
+  - DASHBOARD
+    - add page 1 to XX in result
+    - add view 50 / 100 result (DESKTOP ONLY)
+    - add button to show 10 most search specific menu
+  
+  - FAVORITE
+    - add delete from favorite
+    - add button to display 10 favorite menu
+
+  - PROFILE
+    - add delete account
+
+- bugs
+  - LOGIN/SIGN UP
+    - user cannot login automatically when user open two tabs, one tab already login but when user open url in second tab, system still requst user to login
+    - user cant use enter button for altenative click login button
+    - user open and login in two tab, if user log out in first tab, then when user logout in second tab, it will display error page
+    - user open two tab, user login in first tab using username A1, when user login is second tab using username B2, then profile in first tab change to B2
+
+  - DASHBOARD
+    - user can not use enter after type "anything" in search bar
+    - there is no waiting text for waiting menu api
+    - there is no mark/button/text to show that this menu alreadt favorited
+      - find a way to display it efficiently
+    - there are html tag in detail in some pasta keyword detail modal
+    - there are duplicate ingredient from API in detail modal
+    - add text ingredient and instructions in detail modal
+    - in text "result from ..., eventhough the result only show 1 menu, the text display 10 from 1,
+    it also display 10 from 0 for 0 data result
+    - add validation so user can not search "empty text" keyword in sarch bar
+    - add margin/padding right to text result
+    - there are some condition there is no instruction in modal detail in some menu
+
+  - FAVORITE
+    - there are some bugs in detail modal but it already in dashbaord bugs
+    - add "are" after "there" in empty favorite
+ 
+  - PROFILE
+    - fix update button color
+    - add "enter" action instead of click update when user what to update profile
+    - add padding top
+
 ---
 ### Project Journal
 
@@ -78,9 +124,7 @@ Key Features:
 - ~responsive favorite page~
   - fix title favorite
   - fix card position
-- check all button style and update style if necessary
-  - update profile button
-  - 
+- analysis bugs and needed new feature
 
 issue and solution
 - 

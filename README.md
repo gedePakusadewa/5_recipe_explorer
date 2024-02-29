@@ -9,6 +9,13 @@
 ![alt text](https://github.com/gedePakusadewa/5_recipe_explorer/blob/main/preview/desktop_6.png)
 ![alt text](https://github.com/gedePakusadewa/5_recipe_explorer/blob/main/preview/desktop_7.png)
 
+![alt text](https://github.com/gedePakusadewa/5_recipe_explorer/blob/main/preview/mobile_1.png)
+![alt text](https://github.com/gedePakusadewa/5_recipe_explorer/blob/main/preview/mobile_2.png)
+![alt text](https://github.com/gedePakusadewa/5_recipe_explorer/blob/main/preview/mobile_3.png)
+![alt text](https://github.com/gedePakusadewa/5_recipe_explorer/blob/main/preview/mobile_4.png)
+![alt text](https://github.com/gedePakusadewa/5_recipe_explorer/blob/main/preview/mobile_5.png)
+![alt text](https://github.com/gedePakusadewa/5_recipe_explorer/blob/main/preview/mobile_6.png)
+![alt text](https://github.com/gedePakusadewa/5_recipe_explorer/blob/main/preview/mobile_7.png)
 
 
 ### Project Image Mobile Preview

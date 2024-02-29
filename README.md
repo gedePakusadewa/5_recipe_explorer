@@ -1,7 +1,7 @@
 #### This is a "Recipe Explorer", project idea was generated from ChatGPT
 
 ### Project Image Desktop Preview
-![alt text](https://github.com/gedePakusadewa/5_recipe_explorer/tree/main/preview/mobile_1.png)
+![alt text](https://github.com/gedePakusadewa/5_recipe_explorer/blob/main/preview/desktop_1.png)
 
 ### Project Image Mobile Preview
 

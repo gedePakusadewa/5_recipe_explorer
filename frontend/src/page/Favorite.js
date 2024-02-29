@@ -30,7 +30,7 @@ const Favorite = () => {
 
   return(
     <>
-      <h1>{GeneralConst.FAVORITE}</h1>
+      <div className="title-page-favorite">{GeneralConst.FAVORITE_TITLE}</div>
       <div className="wrapper-favorite">
         {favoriteData === null || favoriteData.length === 0 && (
           <p>{GeneralConst.EMPTY_FAVORITE_MESSAGE}</p>

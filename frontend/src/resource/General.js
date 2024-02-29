@@ -28,7 +28,9 @@ const General = {
     SIGNUP_TOBE_MEMBER:"Sign Up To Be Member",
     SIGNUP_WRONG_INPUT:"Wrong format username or password or email!",
     DETAIL_RECIPE_PLEASE_WAIT:"Please wait, data is being fetching",
-    FAVORITE_CONFIRMATION:"{titleRecipe} get favorited."
+    FAVORITE_CONFIRMATION:"{titleRecipe} get favorited.",
+    FAVORITE_TITLE:"Favorite Menu",
+
   };
   
   export default General

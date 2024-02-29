@@ -75,6 +75,12 @@ Key Features:
 - ~responsive dashboard~
   - update style menu
   - fix navbar on page mark
+- ~responsive favorite page~
+  - fix title favorite
+  - fix card position
+- check all button style and update style if necessary
+  - update profile button
+  - 
 
 issue and solution
 - 

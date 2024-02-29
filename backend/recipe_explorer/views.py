@@ -144,16 +144,17 @@ class Favorite(generics.GenericAPIView):
     def post(self, request):
         user_id = Token.objects.get(key=request.auth.key).user_id
         user = User.objects.get(pk=user_id)
-        favorite_data = self.queryset.filter(recipe_id=request.data['recipe_id'])
-        print(favorite_data)
 
-        if user is not None and not favorite_data:
-            serializer = self.serializer_class(data={"user":user_id, "recipe_id":request.data['recipe_id'], "title":request.data['title'], "imageURL":request.data['imageURL']})
+        if user is not None:
+            favorite_data = self.queryset.filter(recipe_id=request.data['recipe_id'], user_id=user_id)
 
-            if  serializer.is_valid():
-                serializer.save()
+            if not favorite_data:
+                serializer = self.serializer_class(data={"user":user_id, "recipe_id":request.data['recipe_id'], "title":request.data['title'], "imageURL":request.data['imageURL']})
 
-                return Response(status=status.HTTP_200_OK)
+                if  serializer.is_valid():
+                    serializer.save()
+
+                    return Response(status=status.HTTP_200_OK)
             
         return Response(
                 {

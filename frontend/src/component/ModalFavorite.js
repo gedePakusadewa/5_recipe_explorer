@@ -18,10 +18,10 @@ const ModalFavorite = ({
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Favorite</Modal.Title>
+          <Modal.Title>{GeneralConst.FAVORITE}</Modal.Title>
         </Modal.Header>
         <Modal.Body>          
-          <p>"{titleRecipe}" get favorited.</p>
+          <p>{GeneralConst.FAVORITE_CONFIRMATION.replace("{titleRecipe}", titleRecipe)}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

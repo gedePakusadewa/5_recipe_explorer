@@ -71,16 +71,28 @@ Key Features:
 ---
 ### Project Journal
 
+##### Day 10
+- ~responsive dashboard~
+  - update style menu
+  - fix navbar on page mark
+
+issue and solution
+- 
+
+
 ##### Day 9
-- login/sign page
+- ~login/sign page~
   - fix button style
-  - responsive
-- fix style in general related to btn class
+  - make page responsive for desktop and phone
+- ~fix style in general related to btn class~
 - ~fix double favorite~
 - ~add loading icon in pop up deatil recipe~
 - ~fix when search keyword outside pasta~
-- fix different modal content for detail pasta in favorite
-- add string do general resource
+- ~fix different modal content for detail pasta in favorite~
+- ~add string do general resource~
+- ~fix position card in dashboard to be like row~
+- responsive dashboard
+  - update style menu
 
 issue and solution
 - 

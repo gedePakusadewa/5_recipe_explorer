@@ -28,12 +28,13 @@ const Dashboard = () => {
       }).then((res) => {
         setSearchResult(res.data.results)
         setTotalSearchResult(res.data.totalResults)
+      }).catch((err) => {
+
       })
     }
   }
 
   const favoriteHandler = async (idRecipe, title, imageURL) => {
-    // console.log(title)
     axios({
       method: 'post',
       url: UrlConst.GETFAVORITE,
@@ -63,30 +64,33 @@ const Dashboard = () => {
           />
           <button
             onClick={searchHandler}
+            className="btn-search-home"
           >
-            Search
+            {GeneralConst.SEARCH}
           </button>
         </div>
       </div>
       <hr />
       {searchResult !== null && (
         <>
-          <p>Result "{searchInput}" 10 from total {totalSearchResult}</p>
-          {searchResult.map((item, idx) => {
-            return (
-              <Card 
-                title={item.title}
-                imageUrl={item.image}
-                isShowBtnFavorite={true}
-                id={item.id}
-                setIsShowModal={setIsShowModal}
-                setRecipeIdModal={setRecipeIdModal}
-                setTitleModal={setTitleModal}
-                favoriteHandler={favoriteHandler}
-              />
-            )
-          })}          
-        </>
+          <div> {GeneralConst.RESULT_SEARCH} {totalSearchResult}</div>
+          <div className="result-search-wrapper">
+            {searchResult.map((item, idx) => {
+              return (
+                <Card 
+                  title={item.title}
+                  imageUrl={item.image}
+                  isShowBtnFavorite={true}
+                  id={item.id}
+                  setIsShowModal={setIsShowModal}
+                  setRecipeIdModal={setRecipeIdModal}
+                  setTitleModal={setTitleModal}
+                  favoriteHandler={favoriteHandler}
+                />
+              )
+            })}          
+          </div>
+        </>        
       )}
       {isShowModal && (
         <ModalDetailRecipe

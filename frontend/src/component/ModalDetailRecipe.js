@@ -42,11 +42,11 @@ const ModalDetailRecipe = ({
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Detail {titleModal}</Modal.Title>
+          <Modal.Title>{GeneralConst.DETAIL} {titleModal}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {isLoading && (
-            <span>Please wait, data is being fetching</span>
+            <span>{GeneralConst.DETAIL_RECIPE_PLEASE_WAIT}</span>
           )}
           {ingredients && (
             ingredients.map((item) => {

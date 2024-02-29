@@ -78,7 +78,7 @@ const Profile = () => {
           className="btn-cust"
           onClick={onSubmit}
         >
-          Update
+          {GeneralConst.UPDATE}
         </button>
       </div>
     </div>

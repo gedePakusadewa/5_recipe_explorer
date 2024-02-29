@@ -18,8 +18,7 @@ const Card = ({
           src={imageUrl}
           className="card-img"
         />
-        <span>{title}</span>
-        <br />
+        <div className="title-card">{title}</div>
         {isShowBtnFavorite === true && (
           <>
             <button

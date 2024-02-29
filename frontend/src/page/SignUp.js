@@ -26,9 +26,9 @@ const SignUp = () =>{
     <div className="login-container-bg">
       <div className="login-container">
         <div>
-          <h2>Sign Up To Be Member</h2>
+          <h2>{GeneralConst.SIGNUP_TOBE_MEMBER}</h2>
           {context.isErrorInput && (
-            <p className="wrong-username-password">Wrong format username or password or email!</p>
+            <p className="wrong-username-password">{GeneralConst.SIGNUP_WRONG_INPUT}</p>
           )}
           <label htmlFor="title">{GeneralConst.USERNAME}</label><br />
           <input 

@@ -22,7 +22,13 @@ const General = {
     SEARCH:"Search",
     DETAIL:"Detail",
     CLOSE:"Close",
-    EMPTY_FAVORITE_MESSAGE:"There no favorite recipe yet."
+    EMPTY_FAVORITE_MESSAGE:"There no favorite recipe yet.",
+    RESULT_SEARCH:"Result search 10 from total",
+    UPDATE:"Update",
+    SIGNUP_TOBE_MEMBER:"Sign Up To Be Member",
+    SIGNUP_WRONG_INPUT:"Wrong format username or password or email!",
+    DETAIL_RECIPE_PLEASE_WAIT:"Please wait, data is being fetching",
+    FAVORITE_CONFIRMATION:"{titleRecipe} get favorited."
   };
   
   export default General

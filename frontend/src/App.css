@@ -40,3 +40,9 @@
 body{
   background-color: #e9ebe8 !important;
 }
+
+@media only screen and (max-width: 372px) {
+  .App-container{
+    width: fit-content;
+  }
+}

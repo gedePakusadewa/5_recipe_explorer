@@ -7,6 +7,7 @@ import LogIn from './page/LogIn.js';
 import SignUp from './page/SignUp.js';
 import AuthProvider from './helper/Authentication.js';
 import ProtectedRoute from './helper/ProtectedRoute.js';
+import GeneralConst from "./resource/General.js"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -21,25 +22,33 @@ function App() {
           <Routes>
             <Route path="/" element={
               <ProtectedRoute>
-                <Navbar />
+                <Navbar 
+                 activeNavBar={GeneralConst.DASHBOARD}
+                />
                 <Dashboard />
               </ProtectedRoute> 
             }/>
             <Route path="/dashboard" element={
               <ProtectedRoute>
-                <Navbar />
+                <Navbar 
+                 activeNavBar={GeneralConst.DASHBOARD}
+                />
                 <Dashboard />
               </ProtectedRoute> 
             }/>
             <Route path="/profile" element={
               <ProtectedRoute>
-                <Navbar />
+                <Navbar 
+                 activeNavBar={GeneralConst.PROFILE}
+                />
                 <Profile />
               </ProtectedRoute> 
             }/>
             <Route path="/favorite" element={
               <ProtectedRoute>
-                <Navbar />
+                <Navbar 
+                 activeNavBar={GeneralConst.FAVORITE}
+                />
                 <Favorite />
               </ProtectedRoute> 
             }/>

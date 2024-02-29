@@ -5,7 +5,7 @@ import { useCookies } from 'react-cookie';
 import GeneralConst from "../resource/General.js"
 import "../style.css";
 
-function Navbar() {
+function Navbar({activeNavBar}) {
   const context = useContext(AuthContext);
   const [cookies, setCookie] = useCookies(['user']);
 
@@ -15,7 +15,7 @@ function Navbar() {
         <div>
           <Link to="/">
             <button 
-              className="btn-cust"
+              className={activeNavBar === GeneralConst.DASHBOARD ? "btn-cust btn-active-navbar" : "btn-cust btn-non-active-navbar"}
             >
               {GeneralConst.DASHBOARD}
             </button>
@@ -24,7 +24,7 @@ function Navbar() {
         <div>
           <Link to="/Favorite">
             <button 
-              className="btn-cust"
+              className={activeNavBar === GeneralConst.FAVORITE ? "btn-cust btn-active-navbar" : "btn-cust btn-non-active-navbar"}
             >
               {GeneralConst.FAVORITE}
             </button>
@@ -33,7 +33,7 @@ function Navbar() {
         <div>
           <Link to="/profile">
             <button 
-              className="btn-cust"
+              className={activeNavBar === GeneralConst.PROFILE ? "btn-cust btn-active-navbar" : "btn-cust btn-non-active-navbar"}
             >
               {GeneralConst.PROFILE}
             </button>
@@ -42,7 +42,7 @@ function Navbar() {
         {cookies['token'] !== undefined && (
           <div>
             <button
-              className="btn-cust"
+              className="btn-cust btn-non-active-navbar"
               onClick={()=>context.handleLogout(cookies['token'])}
             >
               {GeneralConst.LOGOUT}

@@ -287,6 +287,15 @@ nav {
     margin-bottom: 20px;
 }
 
+.btn-delete-profile{
+    color:red;
+    background-color: #bec2ba;
+}
+
+.btn-update-profile{
+    background-color: #5ca835;
+}
+
 /* end profile */
 
 /* favorite */

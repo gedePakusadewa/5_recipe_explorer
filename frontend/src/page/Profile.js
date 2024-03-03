@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useCookies } from 'react-cookie';
-import Navbar from "../component/NavBar.js";
 import GeneralConst from "../resource/General.js"
 import UrlConst from "../resource/Url.js"
 import axios from "axios";
+import ModalDeleteAccountConfirmation from "../component/ModalDeleteAccountConfirmation.js";
+import ModalProcess from "../component/ModalProcess.js";
 import "../style.css";
 
 const Profile = () => {
@@ -13,6 +14,8 @@ const Profile = () => {
     username:"",
     email:""
   });
+  const [isShowModalDeleteAccountConfirmation, setIsShowModalDeleteAccountConfirmation] = useState(false)
+  const [isShowModalProcess, setIsShowModalProcess] = useState(false)
 
   useEffect(() => {
     getProfile()
@@ -52,36 +55,63 @@ const Profile = () => {
     });
   }
 
+  const displayModalDelete = () => {
+    setIsShowModalDeleteAccountConfirmation(true)
+  }
+
   return(
-    <div className="container-profile">
-      <div className="wrapper-profile">
-        <div className="title-profile">{GeneralConst.PROFILE}</div>
-        <label htmlFor="title">{GeneralConst.USERNAME}</label><br />
-        <input 
-          type="input"
-          defaultValue={form.username}
-          name="username"
-          onChange={
-            (e) => {updateForm(e)}
-          }
-        />
-        <label htmlFor="title">{GeneralConst.EMAIL}</label><br />
-        <input
-          type="email"
-          name="email"
-          defaultValue={form.email}
-          onChange={
-            (e) => {updateForm(e)}
-          }
-        />
-        <button
-          className="btn-cust"
-          onClick={onSubmit}
-        >
-          {GeneralConst.UPDATE}
-        </button>
+    <>
+      <div className="container-profile">
+        <div className="wrapper-profile">
+          <div className="title-profile">{GeneralConst.PROFILE}</div>
+          <label htmlFor="title">{GeneralConst.USERNAME}</label><br />
+          <input 
+            type="input"
+            defaultValue={form.username}
+            name="username"
+            onChange={
+              (e) => {updateForm(e)}
+            }
+          />
+          <label htmlFor="title">{GeneralConst.EMAIL}</label><br />
+          <input
+            type="email"
+            name="email"
+            defaultValue={form.email}
+            onChange={
+              (e) => {updateForm(e)}
+            }
+          />
+          <button
+            className="btn-cust btn-update-profile"
+            onClick={onSubmit}
+          >
+            {GeneralConst.UPDATE}
+          </button>
+
+          <button
+            className="btn-cust btn-delete-profile"
+            onClick={displayModalDelete}
+          >
+            {GeneralConst.DELETE_ACCOUNT}
+          </button>
+        </div>
       </div>
-    </div>
+      {isShowModalDeleteAccountConfirmation && (
+        <ModalDeleteAccountConfirmation
+          setIsShowModalDeleteAccountConfirmation={setIsShowModalDeleteAccountConfirmation}
+          setIsShowModalProcess={setIsShowModalProcess}
+          username={form.username}
+        />
+      )}
+      {isShowModalProcess && (
+        <ModalProcess
+          setIsShowModalProcess={setIsShowModalProcess}
+          title={GeneralConst.DELETE_PROCESS_TITLE}
+          bodyText={GeneralConst.DELETE_PROCESS_TEXT}
+        />
+      )}
+    </>
   )
 }
 

@@ -130,6 +130,15 @@ Key Features:
 ---
 ### Project Journal
 
+##### Day 11
+- work on new feature
+ - add delete account
+   - add modal
+   - add button delete
+   - add delete API in backend
+   - when user delete account, system automatically logout
+   - add modal please wait, data is being deleted
+
 ##### Day 10
 - ~responsive dashboard~
   - update style menu

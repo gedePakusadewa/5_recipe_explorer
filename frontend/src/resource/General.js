@@ -30,7 +30,12 @@ const General = {
     DETAIL_RECIPE_PLEASE_WAIT:"Please wait, data is being fetching",
     FAVORITE_CONFIRMATION:"{titleRecipe} get favorited.",
     FAVORITE_TITLE:"Favorite Menu",
-
+    DELETE_ACCOUNT:"Delete Account",
+    DELETE_ACCOUNT_CONFIRMATION_TITLE:"Delete Confirmation",
+    DELETE_ACCOUNT_CONFIRMATION_TEXT:"Are you sure delete this account {username}?",
+    DELETE_ACCOUNT_YES_BTN:"Yes, delete this account",
+    DELETE_PROCESS_TITLE:"Delete",
+    DELETE_PROCESS_TEXT:"Data is being deleted. Please wait."  
   };
   
   export default General

@@ -128,6 +128,23 @@ class Profile(generics.GenericAPIView):
                 return Response(status=status.HTTP_200_OK)
             
         return Response(serializer_user.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def delete(self, request):
+        user_id = Token.objects.get(key=request.auth.key).user_id
+        user = User.objects.get(pk=user_id)
+
+        if not user:
+            return Response(
+                {
+                    "status": "fail",
+                    "message": "User with not found"
+                },
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        user.delete()
+
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 class Favorite(generics.GenericAPIView):
     serializer_class = FavoriteSerializer

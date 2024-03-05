@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from "axios";
 import UrlConst from "../resource/Url.js"
 
-import { useNavigate, } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../App.js";
 import { useCookies } from 'react-cookie';
 

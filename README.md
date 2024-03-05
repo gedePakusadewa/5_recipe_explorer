@@ -94,8 +94,8 @@ Key Features:
     - add delete from favorite
     - add button to display 10 favorite menu
 
-  - PROFILE
-    - add delete account
+  - ~PROFILE~
+    - add delete account (Hard delete)
 
 - bugs
   - LOGIN/SIGN UP
@@ -130,14 +130,21 @@ Key Features:
 ---
 ### Project Journal
 
+
+##### Day 12
+- ~work on new feature~
+  - add delete account
+    - when user delete account, system automatically logout
+- 
+
 ##### Day 11
 - work on new feature
  - add delete account
-   - add modal
-   - add button delete
-   - add delete API in backend
+   - ~add modal~
+   - ~add button delete~
+   - ~add delete API in backend~
    - when user delete account, system automatically logout
-   - add modal please wait, data is being deleted
+   - ~add modal please wait, data is being deleted~
 
 ##### Day 10
 - ~responsive dashboard~

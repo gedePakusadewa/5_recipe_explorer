@@ -1,14 +1,22 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import GeneralConst from "../resource/General.js"
+import UrlConst from "../resource/Url.js"
+import axios from "axios";
 import { useState } from 'react';
+import { useCookies } from 'react-cookie';
+import { useNavigate } from "react-router-dom";
 
 const ModalDeleteAccountConfirmation = ({
   setIsShowModalDeleteAccountConfirmation = () => {},
   setIsShowModalProcess = () => {},
   username
 }) => {
+  const [cookies, setCookie, removeCookie] = useCookies(['user']);
+
   const [show, setShow] = useState(true);
+
+  const navigate = useNavigate();
 
   const handleClose = () => {
     setShow(false)
@@ -18,6 +26,16 @@ const ModalDeleteAccountConfirmation = ({
   const deleteHandler = () => {
     setIsShowModalProcess(true);
     handleClose();
+
+    axios({
+      method: 'delete',
+      url: UrlConst.GETPROFILE,
+      headers: {'Authorization': "Token " + cookies['token']},
+    }).then((res) => {
+      setIsShowModalProcess(false);
+      removeCookie('token' ,{path:'/'})
+      navigate('/login');
+    })
   }
 
   return(

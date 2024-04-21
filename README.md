@@ -132,10 +132,14 @@ Key Features:
 
 
 ##### Day 12
-- ~work on new feature~
-  - add delete account
+- work on new feature
+  - ~add delete account~
     - when user delete account, system automatically logout
-- 
+  - dashbboard
+    - add page 1 to XX in result
+      - Make a custom or take from library?
+        - because we use data from third library, it will be more simple if we just create a custom API from scratch, so we dont need to dig information how to implement library with this API
+  - try to learn more about this https://www.educative.io/answers/how-to-implement-pagination-in-reactjs
 
 ##### Day 11
 - work on new feature
